@@ -18,12 +18,14 @@
 			</ul>
 			<br/>	    
 	        <h2>Tweets</h2>
-	        <div th:each="tweet:${tweetList}">
-	            <h5>
+	        <div class="list-group" th:each="tweet:${tweetList}">
+	        	<div class="list-group-item"> 
+	         	   <h5>
 	            	@<span th:text="${tweet.user.username}"></span>
 	            	<small th:text="${tweet.date}"></small>
-	            </h5>
-	            <p th:utext="${tweet.message}"></p>
+	            	</h5>
+		            <p th:utext="${tweet.message}"></p>
+	        	</div>
 	    	</div>
 	    </div>
 	    <div th:replace="/fragments/stylesAndScripts :: body-scripts" ></div>
